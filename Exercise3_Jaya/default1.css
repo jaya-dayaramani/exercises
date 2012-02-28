@@ -1,0 +1,41 @@
+
+
+body {
+	background-color: black;
+	text-align: justify;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: small;
+	text-align: justify;
+	color: #555E4F;
+}
+.Image1
+ {
+    position:fixed;
+    float:right;
+    width:30%;
+    height:45%;
+    margin-left:10px;
+    padding-left:10px;
+    z-index:-1;
+}
+
+    
+.Image3
+{
+    position:relative; 
+    float:left;
+    width:50%;
+    height:100%;
+    padding-top:50%;
+    margin-top:20px;
+    }
+   
+   
+
+    .Image4
+    {
+        position:static;
+        float:left;
+        
+       }
+       
