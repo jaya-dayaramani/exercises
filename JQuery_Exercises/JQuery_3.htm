@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <style>
+      p { background:lightpink; font-weight:bold; cursor:pointer; 
+      padding:5px; }
+  p.over { background:lightpink; }
+  span { color:red; }
+   div { color:red; }
+      
+button { margin:5px; }
+p#theone { width: 300px;
+              height: 200px;
+              background-color: Yellow;
+              font-size: 18pt;
+              color:Red;}
+</style>
+  <script src="jquery-1.7.1.min.js" type=""></script>
+</head>
+<body>
+<h1>Binding Event Example</h1>
+<p id="theone"></p>
+<p>Click me to find wat delegate is!</p>
+
+ <!-- <button id="theone">over</button>-->
+<button id="bind">Mouse over</button>
+<button id="unbind">Click to Unbind</button>
+<button>Button #1</button>
+<button>Button #2</button>
+<div><span>0</span> button #1 clicks.</div>
+
+<div><span>0</span> button #2 clicks.</div>
+
+<div id="evtTarget"  style="display:none;">Click!</div>
+<!--<select name="sweets" multiple="multiple">
+    <option>Chocolate</option>
+    <option selected="selected">Candy</option>
+
+    <option>Taffy</option>
+    <option selected="selected">Caramel</option>
+    <option>Fudge</option>
+    <option>Cookie</option>
+
+  </select>-->
+  <div id="myDiv">
+  <!--<input  id="1" type="text" value="Some text" />--></div>
+<script type="">
+
+    function aClick() {
+        $("evtTarget").show().fadeOut("slow");
+    }
+    $("#bind").mouseover(function () {
+       
+        $("#theone").click(aClick).text("On Mouse Over!");
+    });
+    $("#bind").mouseout(function () {
+       
+        $("#theone").click(aClick).text("Moved out!");
+    });
+    $("#unbind").click(function () {
+        $("#theone").unbind('click', aClick)
+  .text("Unbind!...");
+    });
+    $("button:first").click(function () {
+        update($("span:first"));
+    });
+    $("button:last").click(function () {
+        $("button:first").trigger('click');
+
+        update($("span:last"));
+    });
+
+    function update(j) {
+        var n = parseInt(j.text(), 10);
+        j.text(n + 1);
+    }
+    $("body").delegate("p", "click", function () {
+        $(this).after("<p>Another paragraph!</p>");
+    });
+//    $("select").change(function () {
+//        var str = "";
+//        $("select option:selected").each(function () {
+//            str += $(this).text() + " ";
+//        });
+//        $("div").text(str);
+
+//    })
+//    .change();
+//    $(":input").select(function () {
+//        $("div").text("Something was selected").show().fadeOut(1000);
+//    });
+       
+        
+</script>
+
+</body>
+</html>

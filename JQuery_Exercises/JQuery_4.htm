@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <style>
+  p { color:blue; }
+  div { color:red; }
+  span {color:Purple;}
+  </style>
+  <script src="jquery-1.7.1.min.js" type=""></script>
+</head>
+<body>
+  <p>
+
+    Click and drag the mouse to select text in the inputs.
+  </p>
+  <p id="para">On Click Example to find what hover is!</p>
+  <input type="text" value="Some text" />
+  
+  <div id="1"></div>
+  <div>  <table><tr><td></td></tr><tr><td></td></tr></table></div>
+  <select name="sweets" multiple="multiple">
+    <option>Chocolate</option>
+    <option selected="selected">Candy</option>
+
+    <option>Taffy</option>
+    <option selected="selected">Caramel</option>
+    <option>Fudge</option>
+    <option>Cookie</option>
+
+  </select>
+  <div id="2"></div>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li class='fade'>Chips</li>
+
+    <li class='fade'>Socks</li>
+  </ul>
+   <p>Type 'correct' to submit.</p>
+  <form action="javascript:alert('success!');">
+    <div>
+      <input  id="2" type="text" />
+
+      <input type="submit" />
+    </div>
+  </form>
+  <span></span>
+<script type="">
+    $(":input").select(function () {
+        $("#1").text("Something was selected").show();
+    });
+    $("select").change(function () {
+        var str = " ";
+        $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+        });
+        $("#2").text(str);
+    })
+        .change();
+
+    $("#para").click(function () {
+        $(this).slideUp();
+    });
+    $("li").hover(
+  function () {
+      $(this).append($("<span> ***</span>"));
+      //$(this).mouseover($("<span> ***</span>"));
+  },
+  function () {
+      $(this).find("span:last").remove();
+  }
+);
+  $("form").submit(function () {
+      if ($("#2").val() == "correct") {
+          $("span").text("Valid...").show();
+          return true;
+      }
+      $("span").text("Not valid!").show().fadeOut(1000);
+      return false;
+  });
+</script>
+
+</body>
+</html>

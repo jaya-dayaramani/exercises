@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+  <!-- Added JQuery here -->
+  <script src="jquery-1.7.1.min.js" type=""></script>
+
+  <script type="text/javascript">
+      $("document").ready(function () {
+          // Example
+          // Used basic selectors, basic filters, attribute selectors, content filters, hierarchy filters
+          $('#button1').toggle(function () {
+              $("p").css("border", "3px solid red");
+              
+          }, function () {
+              $("p").css("border", "");
+          });
+          $('#button2').toggle(function () {
+              $("ul").css("border", "3px solid yellow");
+
+          }, function () {
+              $("ul").css("border", "");
+          });
+          $('#button3').toggle(function () {
+              $(".myClass").css("border", "3px solid blue");
+
+          }, function () {
+              $("myClass").css("border", "");
+          });
+
+          $('#button4').toggle(function () {
+              $("ul li:nth-child(1)").css("border", "3px solid blue");
+
+          }, function () {
+              $("ul li:nth-child(1)").css("border", "");
+          });
+          $('#button5').toggle(function () {
+              $("body").find(":hidden").not("script").css("border", "3px solid blue");
+
+          }, function () {
+              $("body").find(":hidden").not("script").css("border", "");
+          });
+          $('#button5').toggle(function () {
+              $("td:empty").css('background', 'rgb(255,220,200)');
+
+          }, function () {
+              $("td:empty").css("background", "");
+          });
+          $('#button6').toggle(function () {
+              $(":has(p)").css("border", "3px solid yellow");
+
+          }, function () {
+              $(":has(p)").css("border", "");
+          });
+          
+      });
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+      <ul id="list1">
+          <li class="a">item 1</li>
+          <li class="a">item 2</li>
+          <li class="b">item 3</li>
+          <li class="b">item 4</li>
+      </ul>
+      <p class="a">This is paragraph 1</p>
+      <p>This is paragraph 2</p>
+      <p class="b">This is paragraph 3</p>
+      <p>This is paragraph 4</p>
+      <div class="myClass">div class="myClass"</div>
+      <input type="hidden" /><input id="Text1" type="hidden" />
+      <div>
+       <table border="1">
+    <tr><td>TD #0</td><td></td></tr>
+    <tr><td>TD #2</td><td></td></tr>
+
+    <tr><td></td><td>TD#5</td></tr>
+  </table>
+  <p> inside a paragraph</p>
+  </div>
+      <!-- Add multiple buttons for each selector -->
+      <input type="button" id="button1" value="Select All Ps" />
+      <input type="button" id="button2" value="Select All items in list." />
+      <input type="button" id="button3" value="Select Class." />
+       <input type="button" id="button4" value="Select first list item." />
+       <input type="button" id="button5" value="Select empty." />
+        <input type="button" id="button6" value="Select all paragarphs inside div." />
+  </body>
+  </html>
