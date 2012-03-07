@@ -1,0 +1,76 @@
+<html>   <style type="text/css">
+ 
+#todolist{
+    width:500px;
+    height: 500px;
+    font:normal 13px Arial;
+    background:lightyellow;
+    border:1px dashed gray;
+    overflow-y:scroll;
+    padding:5px;
+}
+ 
+#todolist ul{
+    margin-left:-1px;
+}
+ 
+#todolist li{
+    border-bottom:1px solid gray;
+    margin-bottom:8px;
+}
+ 
+ 
+</style>
+ 
+<body>
+ 
+<div id="todolist" contenteditable="true">
+<div contenteditable="false"><b>Edit To-Do List (auto saved):</b></div>
+    <ul>
+<li>Finish report</li>
+  <li>Set alarm to 6am</li>
+    
+    
+    </ul>
+
+</div>
+This document was modified on 
+ 
+<script type="text/javascript">
+<div>
+document.write(document.lastModified);
+</div>
+ 
+var defaulthtml='<div contenteditable="false"><b>Edit To-Do List (auto saved):</b></div>\n' //remember default contents of to-do list
+defaulthtml+='<ul>\n'
+defaulthtml+='<li>Take out garbage</li>\n'
+defaulthtml+='<li>Finish report</li>\n'
+defaulthtml+='<li>Set alarm to 6am</li>\n'
+defaulthtml+='</ul>'
+ 
+
+ 
+var todolistref=document.getElementById("todolist")
+ 
+var domstorage=window.localStorage || (window.globalStorage? globalStorage[location.hostname] : null)
+if (domstorage){
+    if (domstorage.todolistdata){ //if there is data stored for the to-do list
+        todolistref.innerHTML=domstorage.todolistdata //recall it
+    }
+    todolistref.onkeyup=function(e){
+        domstorage.todolistdata=this.innerHTML
+    }
+}
+ 
+</script>
+<div style="width:300px;float:relative;text-align:right;margin-top:20px;margin-left:-90px;margin-bottom:5px;">
+
+	<form style="font-size:11px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
+    <input type="hidden" name="sitesearch" value=" " />
+    <input onfocus="searchfield_focus(this)" style="width:150px;color:#808080;font-style:italic;margin:0;" 
+    type="text" name="as_q" size="20" value=" " /><input type="submit" style="margin:0;" value="Search" title="Search" />
+	</form>
+</div>
+</div>
+
+  </html>  
