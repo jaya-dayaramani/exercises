@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <!--<script src="JS/jquery.ui.autocomplete.min.js"></script>
+  <script src="JS/jquery-1.7.1.min.js"></script>-->
+  
+  <script>
+      $(document).ready(function () {
+          $("input#autocomplete").autocomplete({
+              source: ["PD43-102M", "PD43-222M", "PD43-272M", "PD43-102M", "PD43-332M", "PD43-562M", "PD43-103M"]
+          });
+      });
+  </script>
+</head>
+<body style="font-size:62.5%;">
+  
+<input id="autocomplete" />
+<input type="button" value="Get Value" />
+
+</body>
+</html>
+
