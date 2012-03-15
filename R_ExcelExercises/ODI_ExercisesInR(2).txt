@@ -1,0 +1,23 @@
+1.
+
+indiaWonList<-odi[odi$Winner==" India",]
+indiaWonvsPak<-indiaWonList[indiaWonList$Team1==" Pakistan" | indiaWonList$Team2==" Pakistan"]
+x<-aggregate(indiaWonvsPak$Matchyear,list(indiaWonvsPak$Matchyear),FUN=length)
+barplot(x[,2],names.arg=x[,1])
+
+
+2.indiaWonList<-odi[odi$Winner==" India",]
+temp1<-aggregate(indiaWonList$Ground,list(indiaWonList$Ground),FUN=length)
+
+matchPlayed<-odi[odi$Team1==" India" | odi$Team2==" India"]
+temp2<-aggregate(matchPlayed$Ground,list(matchPlayed$Ground),FUN=length)
+merge(matchPlayed,indiaWonList,by=matchPlayed[,1],all.x=TRUE)
+MergedTemp<-merge(temp1,temp2,by="Group.1",all.x=TRUE)
+MergedTemp<-cbind((MergedTemp[,2]/MergedTemp[,3]*100)
+PercentageWinning<-cbind(MergedTemp,((MergedTemp[,2]/MergedTemp[,3])*100))
+
+3.
+temp1<-aggregate(odi$Ground,list(odi$Ground),FUN=length)
+temp2<-a[order(-a$x),]
+Topten<-z[1:10,]
+barplot(finalten[,2],names.arg=Topten[,1])  
