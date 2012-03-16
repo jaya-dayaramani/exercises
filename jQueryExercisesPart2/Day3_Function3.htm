@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<title></title>
+<style type="text/css">
+    body{
+    font-family:Tahoma;
+    font-size : 18pt;
+    padding-left:10px;
+   
+}
+input
+{
+   font-family:Tahoma;
+   font-size : 10pt;
+   width:200px;
+}
+  </style>
+     
+<script type="text/javascript">
+ $(document).ready(function () {
+    $('#Change').click(function () {
+        var strVal = $("#inpChng").val();
+        $("#inpChng").val(strVal.toUpperCase());
+    });
+});
+  </script>
+</head>
+  
+<body>
+  <div id="Change" style="color:Blue">
+  Click this to Change to uppercase
+ </div>
+    <p>
+ <input value="to uppercase" type="text" id="inpChng" /></p>
+&nbsp;<p>
+        &nbsp;</p>
+    
+</body>
+</html>
+
